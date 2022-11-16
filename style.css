@@ -1,0 +1,27 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading {
+    opacity: 0.6;
+}
+
+#instModal {
+    display: none;
+    opacity: 0.8;
+}
+
+.main btn {
+    opacity: 0.8;
+}
+
+.status-div {
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+canvas {
+    border-radius: 10px;
+    opacity: 0.8;
+}
