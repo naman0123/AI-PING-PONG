@@ -7,6 +7,17 @@ body {
     opacity: 0.6;
 }
 
+.footer {
+    opacity: 0.6;
+    margin-bottom: 0;
+    bottom: 0;
+    margin-left: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    position: fixed;
+}
+
 #instModal {
     display: none;
     opacity: 0.8;
@@ -22,6 +33,8 @@ body {
 }
 
 canvas {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     border-radius: 10px;
     opacity: 0.8;
 }
