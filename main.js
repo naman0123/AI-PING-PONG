@@ -9,6 +9,13 @@ var paddle2Y = 685,paddle2Height = 70;
 var score1 = 0, score2 =0;
 var paddle1Y;
 
+var leftWristX = 0;
+var leftWristY = 0;
+var rightWristX = 0;
+var rightWristY = 0;
+var scoreRightWrist = 0;
+var scoreLeftWrist = 0;
+
 var  playerscore =0;
 var audio1;
 var pcscore =0;
@@ -24,10 +31,41 @@ var ball = {
 function setup(){
   var canvas =  createCanvas(700,600);
   canvas.center();
+
+  var video = createCapture(VIDEO);
+  video.hide();
+
+  var model = ml5.poseNet(video, modelLoaded);
 }
 
+function modelLoaded() {
+  console.log("Model loaded");
+}
+
+function gotPoses(results) {
+  if(results.length > 0) {
+    rightWristX = results[0].pose.rightWrist.x;
+    rightWristY = results[0].pose.rightWrist.y;
+    console.log(`Right wrist X: ${rightWristX}, Right wrist Y: ${rightWristY}`);
+
+    leftWristX = results[0].pose.leftWrist.x;
+    leftWristY = results[0].pose.leftWrist.y;
+    console.log(`Left wrist X: ${leftWristX}, Left wrist Y: ${leftWristY}`);
+
+    scoreRightWrist = results[0].pose.keypoints[10].score;
+    scoreLeftWrist = results[0].pose.keypoints[9].score;
+    console.log(`Right wrist score: ${scoreRightWrist}, Left wrist score: ${scoreLeftWrist}`);
+  }
+}
 
 function draw(){
+  model.onPose('pose', gotPoses);
+
+  if(scoreRightWrist > 0.2) {
+    fill(156, 200, 156);
+    stroke(200, 156, 56);
+    circle(rightWristX, rightWristY, 1);
+  }
 
  background(0); 
 
