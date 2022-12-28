@@ -1,40 +1,41 @@
-body {
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.heading
+{
+width: 100%;
+text-align: left;
+}
+.heading h3{
+    display: inline;
 }
 
-.heading {
-    opacity: 0.6;
+.heading button{
+    float: right;
+    border: 1px solid white;
 }
 
-.footer {
-    opacity: 0.6;
-    margin-bottom: 0;
-    bottom: 0;
-    margin-left: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5;
-    position: fixed;
+#start ,#status, #restart
+{
+font-size: 22px;
 }
 
-#instModal {
-    display: none;
-    opacity: 0.8;
+.modal-dialog
+{
+    width: 70%;
 }
-
-.main btn {
-    opacity: 0.8;
+.modal-body
+{
+    text-align: left;
+    font-size: 20px;
 }
-
-.status-div {
-    opacity: 0.6;
-    border-radius: 10px;
+h4
+{
+   background-color: grey;
+   color:white;
+   line-height: 2;
 }
-
-canvas {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    opacity: 0.8;
-}
+canvas 
+  {
+      border:3px solid white;
+      border-radius: 20px;
+      box-shadow:  5px 5px 5px white;
+  }
